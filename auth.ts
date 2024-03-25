@@ -15,7 +15,7 @@ async function getUser(email: string): Promise<User | undefined> {
     throw new Error('Failed to fetch user.');
   }
 }
-
+//todo why should call the nextAuth function seperately? one in the middleware.ts and the other in the auth.ts
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [

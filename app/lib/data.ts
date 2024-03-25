@@ -130,6 +130,7 @@ export async function fetchFilteredInvoices(
 
 export async function fetchInvoicesPages(query: string) {
   noStore();
+  // throw new Error('Failed to fetch total number of invoices.');
   try {
     const count = await sql`SELECT COUNT(*)
     FROM invoices
