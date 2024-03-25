@@ -12,6 +12,7 @@ model Customers {
   name      String @db.VarChar(255)
   email     String @db.VarChar(255)
   imageUrl String @db.VarChar(255) @map("image_url")
+  invoices  Invoices[]
 
   @@map("customers")
 }
@@ -22,6 +23,7 @@ model Invoices {
   amount      Int
   status      String   @db.VarChar(255)
   date        DateTime @db.Date
+  customer    Customers @relation(fields: [customerId], references: [id])
 
   @@map("invoices")
 }
